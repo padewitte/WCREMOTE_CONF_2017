@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>P.A. DEWITTE - Adding Handwriting Recognition to your application with Custom Elements</title>
+
+    <meta name="description" content="Reconnaissance d'ériture avec un composant Polymer">
+    <meta name="author" content="P.A. DEWITTE">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/myscript.css" id="theme">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Waiting+for+the+Sunrise">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+
+
+        function updateText(content) {
+            document.getElementsById('textSample').innerHtml(content);
+        }
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+    <!-- Integration  myscript-math-web -->
+    <script src="bower_components/pepjs/dist/pep.min.js"></script>
+    <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel="import" href="bower_components/myscript-math-web/myscript-math-web.html">
+    <link rel="import" href="bower_components/myscript-text-web/myscript-text-web.html">
+
+    <style>
+        canvas[id^=ms-rendering-canvas] {
+            /* Credit http://lea.verou.me/css3patterns/#blueprint-grid
+                #269 -> white */
+            background-color: white;
+            background-image: linear-gradient(#0060A0 2px, transparent 2px), linear-gradient(90deg, #0060A0 2px, transparent 2px), linear-gradient(rgba(34, 102, 153, .3) 1px, transparent 1px), linear-gradient(90deg, rgba(34, 102, 153, .3) 1px, transparent 1px);
+            background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+            background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="reveal">
+
+        <!-- Any section element inside of this container is displayed as a slide
+
+    <h1>Composant polymer de reconnaissance d'écriture</h1>
+    -->
+        <div class="slides">
+            <section>
+                <h1>Adding Handwriting Recognition to your application with Custom Elements</h1>
+                <br/>
+                <br/>
+                <div class="logo-container sub">
+                    <img class="logo" height="200px" width="500px " src="img/myscript.svg "></img>
+                    <img class="logo" height="200px" src="img/wtcremoteconf.png"></img>
+                </div>
+            </section>
+            <section data-background-image="img/keyboard.jpg" data-background-size="100%">
+                <!-- Credit https://stocksnap.io/photo/VNX2QDGS0J -->
+            </section>
+            <section data-background-image="img/math-notebook.jpg" data-background-size="100%">
+                <!-- Credit  https://pixabay.com/fr/l-%C3%A9cole-livre-la-science-physique-683552/ -->
+            </section>
+            <section data-background-image="img/China.svg" data-background-size="30%">
+                <!-- Credit  https://en.wikipedia.org/wiki/China#/media/File:China_(Chinese_characters).svg -->
+            </section>
+            <section data-background-image="img/Microsoft-Surface-Pro-4-pen-trackpad.jpg" data-background-size="100%">
+                <!-- Credit  http://www.digitaltrends.com/computing/microsoft-releases-alternative-tip-kit-for-the-surface-stylus/ -->
+            </section>
+            <section id="chiness-text-recognition">
+                <myscript-text-web class="stretch" language="zh_CN" applicationkey="8b5d3b9b-3b2a-45a2-8009-fa7680a98f73" hmackey="8cf06e22-d096-4aa3-a072-0b4c8a9acb8d">
+                </myscript-text-web>
+            </section>
+            <section id="mathTargetElement">
+            </section>
+            <section id="exemple-math">
+                <h3>Integration in your application</h3>
+            </section>
+            <section id="under-the-hood">
+                <h3>Custom elements design</h3>
+                <ul>
+                    <li>Build with polymer but run even in raw html pages</li>
+                    <li>Stroke capture and rendering</li>
+                    <li>Server calls for handwriting recognition</li>
+                    <li>Events, methods to take advantage of recognized content</li>
+                    <li>Style customization</li>
+                </ul>
+            </section>
+            <section>
+                <h1>Thanks</h1>
+                <br>
+                <h3>@padewitte</h3>
+                <h3>dev.myscript.com</h3>
+                <h3>padewitte.github.io/WCREMOTE_CONF_2017/</h3>
+            </section>
+            <section>
+                <h2>More demo</h2>
+                <h3>webdemo.myscript.com</h3>
+            </section>
+            <section>
+                <h2>Crédits</h2>
+                <h4>Css inspiration from Lea Verou <a href="http://lea.verou.me/css3patterns/#blueprint-grid">http://lea.verou.me/css3patterns/#blueprint-grid</a></h4>
+                <h4>Images</h4>
+                <div><a href="https://stocksnap.io/photo/VNX2QDGS0J">https://stocksnap.io/photo/VNX2QDGS0J</a></div>
+                <div><a href="https://pixabay.com/fr/l-%C3%A9cole-livre-la-science-physique-683552/">https://pixabay.com/fr/l-%C3%A9cole-livre-la-science-physique-683552/</a></div>
+                <div><a href="https://en.wikipedia.org/wiki/China#/media/File:China_(Chinese_characters).svg">https://en.wikipedia.org/wiki/China#/media/File:China_(Chinese_characters).svg</a></div>
+                <divh5><a href="http://www.digitaltrends.com/computing/microsoft-releases-alternative-tip-kit-for-the-surface-stylus/">http://www.digitaltrends.com/computing/microsoft-releases-alternative-tip-kit-for-the-surface-stylus/</a></div>
+        </section>
+        <!-- This section is a slide. -->
+
+
+    </div>
+
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+    <script src="js/sketch.js"></script>
+
+    <script>
+        // Full list of configuration options available at:
+        // https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize({
+            height: 614,
+            width: 1088,
+            touch: true,
+
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+            minScale: 1,
+            maxScale: 1,
+            transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+            // Optional reveal.js plugins
+            dependencies: [{
+                src: 'lib/js/classList.js',
+                condition: function() {
+                    return !document.body.classList;
+                }
+            }, {
+                src: 'plugin/markdown/marked.js',
+                condition: function() {
+                    return !!document.querySelector('[data-markdown]');
+                }
+            }, {
+                src: 'plugin/markdown/markdown.js',
+                condition: function() {
+                    return !!document.querySelector('[data-markdown]');
+                }
+            }, {
+                src: 'plugin/highlight/highlight.js',
+                async: true,
+                callback: function() {
+                    hljs.initHighlightingOnLoad();
+                }
+            }, {
+                src: 'plugin/notes/notes.js',
+                async: true
+            }, {
+                src: 'bower_components/reveal.js-ace/ace.js'
+            }, {
+                src: 'plugin/reveal-css-snippet/css-snippet.js',
+                callback: function() {
+                    document.getElementById('exemple-math').appendChild(RevealCSSSnippet({
+                        el: document.getElementById('mathTargetElement'),
+                        cssValue: '<myscript-math-web  \n' +
+                            '\tapplicationkey="8b5d3b9b-3b2a-45a2-8009-fa7680a98f73" \n' +
+                            '\thmackey="8cf06e22-d096-4aa3-a072-0b4c8a9acb8d"  \n' +
+                            '\tclass="stretch">  \n' +
+                            '</myscript-math-web>'
+                    }));
+                }
+            }]
+        });
+
+        Reveal.addEventListener('slidechanged', function(event) {
+            // event.previousSlide, event.currentSlide, event.indexh, event.indexv
+            //console.log("SLide nb : "+event.currentSlide);
+
+        });
+
+        function hideElementAndShowBravo() {
+            var solvingZoneElement = document.getElementById('solving-zone');
+            solvingZoneElement.classList.toggle('visible');
+            solvingZoneElement.classList.add('hidden');
+            var bravoH1 = document.getElementById('bravo');
+            bravoH1.classList.toggle('visible');
+            bravoH1.classList.toggle('hidden');
+            var exerciseTitle = document.getElementById('exercise-title');
+            exerciseTitle.classList.toggle('visible');
+            exerciseTitle.classList.toggle('hidden');
+        }
+
+        window.addEventListener('WebComponentsReady', function(e) {
+            //Just
+            katex.render('\\dfrac {2x^{2}} {4}', document.getElementById('equation-to-solve'));
+
+            //Binding the myscript-math-web-result event to then compare the recognized latex with the expected one.
+            var solvingZoneElement = document.getElementById("solving-zone");
+            solvingZoneElement.classList.add("visible");
+
+            solvingZoneElement.addEventListener("myscript-math-web-result", function() {
+
+                var result = solvingZoneElement.result["LATEX"];
+                console.log(result);
+                if (result === "\\dfrac {x^{2}} {2}") {
+                    hideElementAndShowBravo();
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

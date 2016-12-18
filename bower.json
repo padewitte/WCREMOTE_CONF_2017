@@ -1,0 +1,35 @@
+{
+    "name": "reveal.js",
+    "version": "3.2.0",
+    "main": [
+        "js/reveal.js",
+        "css/reveal.css"
+    ],
+    "homepage": "http://lab.hakim.se/reveal-js/",
+    "license": "MIT",
+    "description": "The HTML Presentation Framework",
+    "authors": [
+        "Hakim El Hattab <hakim.elhattab@gmail.com>"
+    ],
+    "dependencies": {
+        "headjs": "~1.0.3",
+        "myscript-text-web": "master",
+        "myscript-math-web": "master",
+        "juicy-ace-editor": "~1.1.1",
+        "reveal.js-ace": "https://github.com/Gottox/reveal.js-ace.git"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/hakimel/reveal.js.git"
+    },
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+    ],
+    "moduleType": [
+        "amd"
+    ]
+}

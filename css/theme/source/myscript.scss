@@ -1,0 +1,131 @@
+/**
+ * White theme for reveal.js. This is the opposite of the 'black' theme.
+ *
+ * By Hakim El Hattab, http://hakim.se
+ */
+
+
+// Default mixins and settings -----------------
+@import "../template/mixins";
+@import "../template/settings";
+// ---------------------------------------------
+
+
+// Include theme-specific fonts
+@import url(../../lib/font/source-sans-pro/source-sans-pro.css);
+
+
+// Override theme settings (see ../template/settings.scss)
+$backgroundColor: #fff;
+
+$mainColor: #0082B5;
+$mainAlternateColor : #00A2CF;
+$headingColor: #005582;
+
+$mainFontSize: 38px;
+$mainFont: 'Source Sans Pro', Helvetica, sans-serif;
+$headingFont: 'Source Sans Pro', Helvetica, sans-serif;
+$headingTextShadow: none;
+$headingLetterSpacing: normal;
+$headingTextTransform: uppercase;
+$headingFontWeight: 600;
+$linkColor: #2a76dd;
+$linkColorHover: lighten( $linkColor, 15% );
+$selectionBackgroundColor: lighten( $linkColor, 25% );
+
+$heading1Size: 2.5em;
+$heading2Size: 1.6em;
+$heading3Size: 1.3em;
+$heading4Size: 1.0em;
+
+section.has-dark-background {
+	&, h1, h2, h3, h4, h5, h6 {
+		color: #fff;
+	}
+}
+
+
+
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------
+
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+	text-transform: none;
+	color: $mainAlternateColor;
+}
+
+.reveal section img {
+	border: none;
+	box-shadow: none;
+}
+
+.reveal pre {
+	box-shadow: none;
+	font-size: 1.5rem;
+
+}
+.reveal pre code {
+	overflow: hidden;
+}
+.logo-container {
+	align-items: stretch;
+	display: flex;
+	justify-content: space-between;
+}
+
+
+.logo-up {
+	position: relative;
+	top : -12rem;
+}
+
+blockquote {
+	background-color: white !important;
+}
+
+
+.techno-container {
+	align-items: stretch;
+	display: flex;
+	justify-content: center;
+}
+
+.techno-container > div > img {
+	width: 215px;
+	height: 173px;
+}
+
+//From http://dabblet.com/gist/0dced2852818c0f555e9
+.tinted-image {
+	width: 450px;
+	height: 316px;
+	background-size: cover;
+	background-color: hsl(199, 100%, 95%);
+	background-blend-mode: luminosity;
+	transition: .5s background-color;
+	-webkit-clip-path:
+					polygon(30px 0, calc(100% - 30px) 0, 100% 30px, 100% calc(100% - 30px),
+									calc(100% - 30px) 100%,
+									30px 100%, 0 calc(100% - 30px), 0 30px);
+	clip-path:
+					polygon(30px 0, calc(100% - 30px) 0, 100% 30px, 100% calc(100% - 30px),
+									calc(100% - 30px) 100%,
+									30px 100%, 0 calc(100% - 30px), 0 30px);
+}
+.left-children {
+	position: relative;
+	width: 50%;
+	max-width: 50%;
+	left: 35%;
+}
+.left-children > h4 {
+	text-align: left;
+}
+.icon {
+	margin: 0px !important;
+	padding: 0px 10px 0px 0px  !important;
+}

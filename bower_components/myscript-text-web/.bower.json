@@ -1,0 +1,51 @@
+{
+  "name": "myscript-text-web",
+  "description": "HTML5 Element easing integration of MyScript text handwriting recognition in your web-page",
+  "keywords": [
+    "web-component",
+    "web-components",
+    "polymer",
+    "myscript",
+    "education",
+    "write",
+    "text",
+    "handwriting",
+    "recognition"
+  ],
+  "main": "myscript-text-web.html",
+  "license": "Apache-2.0",
+  "homepage": "https://myscript.github.io/myscript-text-web/components/myscript-text-web/",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/MyScript/myscript-text-web.git"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "tests",
+    "test",
+    "docs"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#1.4.x",
+    "myscript-common-element": "myscript-common-element#master"
+  },
+  "devDependencies": {
+    "iron-component-page": "PolymerElements/iron-component-page#1.1.x",
+    "iron-ajax": "PolymerElements/iron-ajax#1.2.x"
+  },
+  "resolutions": {
+    "myscript": "master",
+    "polymer": "1.4.x"
+  },
+  "_release": "18721e9c96",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "18721e9c96068816a652bee5e1310e075c40b1c1"
+  },
+  "_source": "https://github.com/MyScript/myscript-text-web.git",
+  "_target": "master",
+  "_originalSource": "myscript-text-web"
+}
