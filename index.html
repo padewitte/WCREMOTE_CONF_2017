@@ -15,6 +15,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
   <link rel="stylesheet" href="css/reveal.css">
+  <link rel="stylesheet" href="css/china.css">
   <link rel="stylesheet" href="css/theme/myscript.css" id="theme">
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Waiting+for+the+Sunrise">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
@@ -102,8 +103,40 @@
         <!-- Credit  http://www.digitaltrends.com/computing/microsoft-releases-alternative-tip-kit-for-the-surface-stylus/ -->
       </section>
       <section id="chiness-text-recognition">
-        <myscript-text-web class="stretch" language="zh_CN" applicationkey="8b5d3b9b-3b2a-45a2-8009-fa7680a98f73" hmackey="8cf06e22-d096-4aa3-a072-0b4c8a9acb8d">
+        <myscript-text-web id="lovezone" class="stretch" language="zh_CN" applicationkey="8b5d3b9b-3b2a-45a2-8009-fa7680a98f73" hmackey="8cf06e22-d096-4aa3-a072-0b4c8a9acb8d">
         </myscript-text-web>
+        <div id="china">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+
       </section>
       <section id="mathTargetElement">
       </section>
@@ -217,32 +250,17 @@
 
     });
 
-    function hideElementAndShowBravo() {
-      var solvingZoneElement = document.getElementById('solving-zone');
-      solvingZoneElement.classList.toggle('visible');
-      solvingZoneElement.classList.add('hidden');
-      var bravoH1 = document.getElementById('bravo');
-      bravoH1.classList.toggle('visible');
-      bravoH1.classList.toggle('hidden');
-      var exerciseTitle = document.getElementById('exercise-title');
-      exerciseTitle.classList.toggle('visible');
-      exerciseTitle.classList.toggle('hidden');
+    function showHeart() {
+
     }
 
     window.addEventListener('WebComponentsReady', function(e) {
-      //Just
-      katex.render('\\dfrac {2x^{2}} {4}', document.getElementById('equation-to-solve'));
-
-      //Binding the myscript-math-web-result event to then compare the recognized latex with the expected one.
-      var solvingZoneElement = document.getElementById("solving-zone");
-      solvingZoneElement.classList.add("visible");
-
-      solvingZoneElement.addEventListener("myscript-math-web-result", function() {
-
-        var result = solvingZoneElement.result["LATEX"];
+      var solvingZoneElement = document.getElementById("lovezone");
+      solvingZoneElement.addEventListener("myscript-text-web-result", function() {
+        var result = solvingZoneElement.firstcandidate;
         console.log(result);
-        if (result === "\\dfrac {x^{2}} {2}") {
-          hideElementAndShowBravo();
+        if (result === "中国") {
+          document.querySelector('#china').classList.add('chinaflags');
         }
       });
     });

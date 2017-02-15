@@ -1,0 +1,70 @@
+.chinaflags {
+  text-align: center;
+}
+
+.chinaflags span {
+  display: inline-block;
+  width: 80px;
+  height: 57px;
+  margin: -280px 40px 54px -34px;
+  background: url("../img/china.png");
+  -webkit-animation: china 5s infinite linear;
+}
+
+.chinaflags span:nth-child(5n+5) {
+  -webkit-animation-delay: .3s;
+}
+
+.chinaflags span:nth-child(3n+2) {
+  -webkit-animation-delay: .5s;
+}
+
+.chinaflags span:nth-child(2n+5) {
+  -webkit-animation-delay: .7s;
+}
+
+.chinaflags span:nth-child(3n+10) {
+  -webkit-animation-delay: 1s;
+}
+
+.chinaflags span:nth-child(7n+2) {
+  -webkit-animation-delay: 1.3s;
+}
+
+.chinaflags span:nth-child(4n+5) {
+  -webkit-animation-delay: .5s;
+}
+
+.chinaflags span:nth-child(3n+7) {
+  -webkit-animation-delay: .7s;
+}
+
+@-webkit-keyframes china {
+  0% {
+    opacity: 1;
+    -webkit-transform: translate(0, 0px) rotateZ(0deg);
+  }
+  75% {
+    opacity: 1;
+    -webkit-transform: translate(100px, 600px) rotateZ(270deg);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translate(150px, 800px) rotateZ(360deg);
+  }
+}
+
+@-moz-keyframes china {
+  0% {
+    opacity: 1;
+    -webkit-transform: translate(0, 0px) rotateZ(0deg);
+  }
+  75% {
+    opacity: 1;
+    -webkit-transform: translate(100px, 600px) rotateZ(270deg);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translate(150px, 800px) rotateZ(360deg);
+  }
+}
